@@ -14,9 +14,10 @@ export const ShinyButtonStyle = css`
     padding: 0.25em;
     overflow: hidden;
     white-space: nowrap;
-    transition: all 0.3s ease;
+    transition: all 0.8s ease;
     width: 50px;
     justify-content: center;
+    text-decoration: none;
 
     svg {
         height: 20px;

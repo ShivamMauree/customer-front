@@ -2,14 +2,14 @@ import Link from "next/link";
 import styled from "styled-components";
 import {ShinyButtonStyle} from "@/components/PrimaryBtn";
 
-const StyledLink = styled.link ` 
+const StyledLink = styled(Link)` 
 
     ${ShinyButtonStyle}
 
 `;
 
-export default function LinkBtn(props){
+export default function LinkBtn(children){
     return (
-        <Link {...props}/>
+        <StyledLink {...children}/>
     );
 }

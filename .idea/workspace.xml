@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ac535c-6fa8-4495-bf4a-893ff0c35dc0" name="Changes" comment="Big Changes to Customer Front_&#10;&#10;Added Read More Section&#10;Added Sheen to button that will light up surrounding&#10;Changed button to only display SVG but reveal text when hovering&#10;Made readmore conditional so that it will show up onclick and dissapear on click(Thinking on changing it to dissapear when user is no longer hovering)&#10;Added new exported const to allow the styled components of the ShinyStyledButton to be applied to any other buttons, links etc...&#10;Implemented const to reduce code redundancy" />
+    <list default="true" id="56ac535c-6fa8-4495-bf4a-893ff0c35dc0" name="Changes" comment="Big Changes to Customer Front_&#10;&#10;Added Read More Section&#10;Added Sheen to button that will light up surrounding&#10;Changed button to only display SVG but reveal text when hovering&#10;Made readmore conditional so that it will show up onclick and dissapear on click(Thinking on changing it to dissapear when user is no longer hovering)&#10;Added new exported const to allow the styled components of the ShinyStyledButton to be applied to any other buttons, links etc...&#10;Implemented const to reduce code redundancy">
+      <change afterPath="$PROJECT_DIR$/components/NewProducts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ProductBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Featured.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Featured.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LinkBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/LinkBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PrimaryBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PrimaryBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +61,7 @@
       <workItem from="1710182585433" duration="625000" />
       <workItem from="1710253461755" duration="8922000" />
       <workItem from="1710433105902" duration="614000" />
-      <workItem from="1710630993069" duration="2870000" />
+      <workItem from="1710630993069" duration="16072000" />
     </task>
     <task id="LOCAL-00001" summary="Big Changes to Customer Front_&#10;&#10;Added Read More Section&#10;Added Sheen to button that will light up surrounding&#10;Changed button to only display SVG but reveal text when hovering&#10;Made readmore conditional so that it will show up onclick and dissapear on click(Thinking on changing it to dissapear when user is no longer hovering)&#10;Added new exported const to allow the styled components of the ShinyStyledButton to be applied to any other buttons, links etc...">
       <option name="closed" value="true" />
@@ -70,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710633519513</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Big Changes to Customer Front_&#10;&#10;Added Read More Section&#10;Added Sheen to button that will light up surrounding&#10;Changed button to only display SVG but reveal text when hovering&#10;Made readmore conditional so that it will show up onclick and dissapear on click(Thinking on changing it to dissapear when user is no longer hovering)&#10;Added new exported const to allow the styled components of the ShinyStyledButton to be applied to any other buttons, links etc...&#10;Implemented const to reduce code redundancy">
+      <option name="closed" value="true" />
+      <created>1710633898053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710633898053</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
