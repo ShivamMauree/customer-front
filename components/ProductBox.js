@@ -2,6 +2,9 @@ import styled from "styled-components";
 import PrimaryBtn from "@/components/PrimaryBtn";
 import ShoppingBtn from "@/components/ShoppingBtn";
 import Center from "@/components/Center";
+import Link from "next/link";
+import {useContext} from "react";
+import {CartContext} from "@/components/CartContext";
 
 const ProductWrapper = styled.div`
     padding: 20px;
@@ -30,8 +33,8 @@ const ProductContainer = styled.div`
     }
 `;
 
-const WhiteBox = styled.div`
-    background: white;
+const WhiteBox = styled(Link)`
+    background: #DDDCDD;
     padding: 20px;
     height: 150px;
     width: 250px;
@@ -49,7 +52,7 @@ const WhiteBox = styled.div`
 
 
 const DescriptionBox = styled.div`
-    background: white;
+    background: #efefef;
     padding: 20px;
     height: 300px;
     width: 250px;
@@ -74,18 +77,20 @@ const DescriptionBox = styled.div`
     }
 `;
 const StyledTitle = styled.h1`
-    font-weight: bold ;
+    font-weight: 700 ;
     font-size: 1.6rem;
     margin: 0;
+    font-style: normal;
 `;
 const Desc= styled.p `
-    color:#aaa;
     font-size: .9rem;
+            font-weight: 100;
+            font-style: normal;
 `
 ;
 
 const StyledPrice = styled.h1`
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 1.5rem;
     margin: 0;
 `;
@@ -120,12 +125,18 @@ const ProductInfo = ({title,description,price})=>(
 );
 
 
-export default function ProductBox({id, title, description, price, images}) {
+export default function ProductBox({_id, title, description, price, images}) {
+    const {setCartProducts} = useContext(CartContext);
+    function addProductToCart(){
+        setCartProducts(prev => [...prev,_id])
+
+    }
+    const productUrl = '/product/' +_id;
     return (
         <Center>
             <ProductWrapper>
                 <ProductContainer>
-                    <WhiteBox>
+                    <WhiteBox href={productUrl}>
                         <div>
                             <img src={images[0]} alt=""/>
                         </div>
@@ -135,7 +146,7 @@ export default function ProductBox({id, title, description, price, images}) {
                         <Desc>{description}</Desc>
                         <StyledPrice>${price}</StyledPrice>
                         <Btnwrapper>
-                            <ShoppingBtn size="l">
+                            <ShoppingBtn size="l" onClick={addProductToCart}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                      className="w-6 h-6">
                                     <path

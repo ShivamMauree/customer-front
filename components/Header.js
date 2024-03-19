@@ -4,12 +4,18 @@ import Center from "@/components/Center";
 import LinkBtn from "@/components/LinkBtn";
 import {bgBlack} from "next/dist/lib/picocolors";
 import {ShinyButtonStyle} from "@/components/PrimaryBtn";
+import {useContext} from "react";
+import {CartContext} from "@/components/CartContext";
 
 const StyledHeader = styled.header`
     background-color: black;
-    padding: 0 0;
-
+    position:sticky;
+    top:0;
+    z-index:10;
+    font-weight: 700;
+    font-style: normal;
 `;
+
 const Logo = styled(Link)`
     color: aliceblue;
     text-decoration:none;
@@ -30,11 +36,12 @@ const NavLink = styled(Link)`
     ${ShinyButtonStyle}
 `;
 export default function Header() {
+    const {cartProducts} = useContext(CartContext);
     return (
         <StyledHeader>
             <Center>
                 <Wrapper>
-                    <Logo href={'/'}> We're Gonna have A logo Here Soon</Logo>
+                    <Logo href={'/'}> We're Gonna have A logo Here Soon </Logo>
                     <StyledNav>
                         <NavLink href={'/'} className="bg-black">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -70,14 +77,14 @@ export default function Header() {
                             </svg>
                             <span className="text">Account</span>
                         </NavLink>
-                        <NavLink href={'/cart'}>
+                        <NavLink href={'/Cart'}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                  className="w-6 h-6">
                                 <path fill-rule="evenodd"
                                       d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
                                       clip-rule="evenodd"/>
                             </svg>
-                            <span className="text">Shopping Cart</span>
+                            <span className="text">Shopping Cart ({cartProducts.length})</span>
                         </NavLink>
                     </StyledNav>
                 </Wrapper>

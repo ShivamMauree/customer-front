@@ -2,24 +2,30 @@ import Center from "@/components/Center";
 import styled from "styled-components";
 import PrimaryBtn from "@/components/PrimaryBtn";
 import ShoppingBtn from "@/components/ShoppingBtn";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {CartContext} from "@/components/CartContext";
 
 const Bg = styled.div`
     background-color:black;
     color: aliceblue;
     padding: 50px 0;
-
 `;
 
 const StyledTitle = styled.h1`
     margin:0;
-    font-weight: bold;
-    color: aliceblue;
+    font-weight:700;
+    font-style:normal;
+    font-size:1.5rem;
+    @media screen and (min-width: 768px) {
+        font-size:3rem;
+    }
 `;
 
 const Desc= styled.p `
     color:#aaa;
     font-size: .9rem;
+    font-weight: 400;
+    font-style: normal;
 `
 ;
 
@@ -61,8 +67,12 @@ const ReadMoreContent = ({product})=> (
 );
 
 export default function Featured({product}) {
+    const {setCartProducts} = useContext(CartContext);
+    function addFeaturedToCart() {
+        setCartProducts(prev => [...prev, product._id])
+
+    }
     const [showMore, setShowMore] = useState(false);
-    console.log(product);
     return (
         <Bg>
             <Center>
@@ -81,7 +91,7 @@ export default function Featured({product}) {
                                    </svg>
                                       <span className="text">Read More</span>
                                </PrimaryBtn>
-                            <ShoppingBtn size="l">
+                            <ShoppingBtn size="l" onClick = {addFeaturedToCart}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                      className="w-6 h-6">
                                     <path

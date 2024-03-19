@@ -6,6 +6,11 @@ import {mongooseConnect} from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 import styled from "styled-components";
 
+const StyledTitle = styled.h1`
+    font-weight: 700 ;
+    font-size: 1.6rem;
+    margin: 0;
+`;
 const StyledPage =styled.div`
 background-color: #dad9da
 `
