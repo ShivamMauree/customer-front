@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56ac535c-6fa8-4495-bf4a-893ff0c35dc0" name="Changes" comment="Big Changes to Customer Front_&#10;&#10;Added AddSubBtn.js component for specific button styling&#10;Added CartBtn.js component for specific button styling&#10;Added Table.js component for further styling on cart page&#10;Added functions to Cart.js to make add product,remove product and clear cart buttons functional&#10;Added feature to keep track and display the total bill accrued&#10;Added API component to allow cart to communicate with the database and retrieve relevant info concerning products&#10;Added Styled components (Whitebox, LocationInfo,ButtonHolder) to Cart.js to keep page visually consistent&#10;Fixed bug where removing all items from cart would not reset the page (last item would still show up)&#10;Added new const to keep track of order information&#10;Added logic to input component to properly keep track of order information&#10;Added form component to allow transfer of data when proceeding to payment">
-      <change afterPath="$PROJECT_DIR$/components/AddSubBtn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CartBtn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/Cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/checkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Cart.js" afterDir="false" />
@@ -38,7 +37,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shiva/WebstormProjects/customer-front/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shiva/WebstormProjects/customer-front/pages/api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -50,6 +49,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shiva\WebstormProjects\customer-front\pages\api" />
+      <recent name="C:\Users\shiva\WebstormProjects\customer-front\models" />
       <recent name="C:\Users\shiva\WebstormProjects\customer-front\components" />
     </key>
   </component>
@@ -74,7 +75,9 @@
       <workItem from="1710852636064" duration="7421000" />
       <workItem from="1711159088967" duration="648000" />
       <workItem from="1711393180239" duration="9343000" />
-      <workItem from="1711455155616" duration="2971000" />
+      <workItem from="1711455155616" duration="3357000" />
+      <workItem from="1711492490016" duration="4329000" />
+      <workItem from="1711540118650" duration="5056000" />
     </task>
     <task id="LOCAL-00001" summary="Big Changes to Customer Front_&#10;&#10;Added Read More Section&#10;Added Sheen to button that will light up surrounding&#10;Changed button to only display SVG but reveal text when hovering&#10;Made readmore conditional so that it will show up onclick and dissapear on click(Thinking on changing it to dissapear when user is no longer hovering)&#10;Added new exported const to allow the styled components of the ShinyStyledButton to be applied to any other buttons, links etc...">
       <option name="closed" value="true" />
@@ -108,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710853554754</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Big Changes to Customer Front_&#10;&#10;Added AddSubBtn.js component for specific button styling&#10;Added CartBtn.js component for specific button styling&#10;Added Table.js component for further styling on cart page&#10;Added functions to Cart.js to make add product,remove product and clear cart buttons functional&#10;Added feature to keep track and display the total bill accrued&#10;Added API component to allow cart to communicate with the database and retrieve relevant info concerning products&#10;Added Styled components (Whitebox, LocationInfo,ButtonHolder) to Cart.js to keep page visually consistent&#10;Fixed bug where removing all items from cart would not reset the page (last item would still show up)&#10;Added new const to keep track of order information&#10;Added logic to input component to properly keep track of order information&#10;Added form component to allow transfer of data when proceeding to payment">
+      <option name="closed" value="true" />
+      <created>1711458737999</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711458737999</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

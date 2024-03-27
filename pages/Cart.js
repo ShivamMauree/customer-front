@@ -253,7 +253,7 @@ export default function CartPage (){
                                        placeholder="Zip-Code"
                                        value={zipcode}
                                        name="zipcode"
-                                       onChange={ev => setCity(ev.target.value)}/>
+                                       onChange={ev => setZipcode(ev.target.value)}/>
                                 <Input type="text"
                                        placeholder="Country"
                                        value={country}
@@ -278,6 +278,9 @@ export default function CartPage (){
                                         <span className="text">Proceed to Payment</span>
                                     </CartBtn>
                                 </ButtonHolder>
+                                <input type="hidden"
+                                       name="products"
+                                       value={cartProducts.join(',')}/>
                             </form>
 
                         </Box>
