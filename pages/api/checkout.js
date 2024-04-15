@@ -10,10 +10,10 @@ export default async function handler(req, res) {
         return;
     }
 
-    const { name, email, city, zipcode, streetAddress, country, products } = req.body;
+    const { name, email, city, zipcode, streetAddress, country, cartProducts} = req.body;
 
         await mongooseConnect();
-        const productsIds = products.split(',');
+        const productsIds = cartProducts;
         const uniqueIds = [...new Set(productsIds)];
 
         const productsInfos = await Product.find({ _id: { $in: uniqueIds } });
@@ -43,8 +43,8 @@ export default async function handler(req, res) {
             line_items,
             mode: 'payment',
             customer_email: email,
-            success_url: process.env.PUBLIC_URL +'/cart?success=true',
-            cancel_url: process.env.PUBLIC_URL +'/cart?canceled=true',
+            success_url:'http://localhost:3000/Cart?success=true',
+            cancel_url: process.env.PUBLIC_URL +'/Cart?canceled=true',
             metadata:{orderId:orderDoc._id.toString()}
         })
 

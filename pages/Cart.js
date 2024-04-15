@@ -113,6 +113,7 @@ export default function CartPage (){
     const [streetAddress, setStreetAddress] = useState('');
     const [zipcode, setZipcode] = useState('');
     const [country, setCountry]= useState('');
+    const [isSuccess,setIsSuccess] = useState(false);
 
     useEffect(()=> {
         if (cartProducts?.length >0){
@@ -136,7 +137,15 @@ export default function CartPage (){
     function clearShoppingCart(){
         clearCart([]);
     }
+    async function makePayment(){
+        const response = await axios.post('/api/checkout' , {
+            name,email,streetAddress,city,zipcode, country,cartProducts
+        })
 
+        if(response.data.url){
+            window.location = response.data.url
+        }
+    }
 
     useEffect(() => {
         let newTotal = 0;
@@ -147,6 +156,29 @@ export default function CartPage (){
         setTotal(newTotal);
     }, [products, cartProducts]);
 
+    useEffect(() => {
+        console.log('Checking success in URL:', window.location.href.includes('success'));
+        if (window.location.href.includes('success')) {
+            console.log('Before clearing cart:', cartProducts);
+            clearCart();
+            console.log('After clearing cart:', cartProducts);
+            setIsSuccess(true);
+        }
+    }, []);
+
+    if (isSuccess){
+        return(
+            <>
+                <Header/>
+                <Center>
+                    <Box>
+                        <h1> Your payment was successful !</h1>
+                        <p> Thank you for your order, we will get back to you shortly.</p>
+                    </Box>
+                </Center>
+            </>
+        );
+    }
     return (
         <StyledPage>
         <Header/>
@@ -226,7 +258,6 @@ export default function CartPage (){
                     {!!cartProducts.length && (
                         <Box>
                             <h2> Order Information</h2>
-                            <form method="post" action="/api/checkout">
                                 <Input type="text"
                                        placeholder="Name"
                                        value={name}
@@ -268,7 +299,7 @@ export default function CartPage (){
                                                   clip-rule="evenodd"/>
                                         </svg>
                                     </CartBtn>
-                                    <CartBtn type="submit">
+                                    <CartBtn onClick={makePayment}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              stroke-width="1.5"
                                              stroke="currentColor" class="w-6 h-6">
@@ -278,11 +309,6 @@ export default function CartPage (){
                                         <span className="text">Proceed to Payment</span>
                                     </CartBtn>
                                 </ButtonHolder>
-                                <input type="hidden"
-                                       name="products"
-                                       value={cartProducts.join(',')}/>
-                            </form>
-
                         </Box>
                     )}
                 </ColumnWrapper>

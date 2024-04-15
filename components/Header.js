@@ -77,7 +77,7 @@ export default function Header() {
                             </svg>
                             <span className="text">Account</span>
                         </NavLink>
-                        <NavLink href={'/Cart'}>
+                        <NavLink href={'/Cart'} >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                  className="w-6 h-6">
                                 <path fill-rule="evenodd"
