@@ -65,12 +65,16 @@ const StyledBtn = styled.button`
     ${ShinyButtonStyle}
 `;
 
-export default function ShoppingBtn({ children, ...rest }) {
+export default function ShoppingBtn({ children, onClick, ...rest }) {
     const [isActive, setIsActive] = useState(false);
 
-    const handleClick = () => {
+    const handleClick = (event) => {
         setIsActive(true);
-        setTimeout(() => setIsActive(false), 400); // Reset after animation
+        setTimeout(() => setIsActive(false), 400);
+
+        if (onClick) {
+            onClick(event);
+        }
     };
 
     return (
@@ -83,7 +87,6 @@ export default function ShoppingBtn({ children, ...rest }) {
         </StyledBtn>
     );
 }
-
 
 
 
